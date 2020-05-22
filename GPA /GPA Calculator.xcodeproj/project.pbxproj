@@ -1,0 +1,695 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94F9EF592477C2B700D828C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF582477C2B700D828C9 /* AppDelegate.swift */; };
+		94F9EF622477C2BA00D828C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94F9EF612477C2BA00D828C9 /* Assets.xcassets */; };
+		94F9EF652477C2BA00D828C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F9EF632477C2BA00D828C9 /* LaunchScreen.storyboard */; };
+		94F9EF702477C2BA00D828C9 /* GPA_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF6F2477C2BA00D828C9 /* GPA_CalculatorTests.swift */; };
+		94F9EF7B2477C2BA00D828C9 /* GPA_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF7A2477C2BA00D828C9 /* GPA_CalculatorUITests.swift */; };
+		94F9EF8A2477C36000D828C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF892477C36000D828C9 /* HomeViewController.swift */; };
+		94F9EF932477D4EB00D828C9 /* ESTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 94F9EF922477D4EB00D828C9 /* ESTabBarController */; };
+		94F9EF962477D77500D828C9 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF952477D77500D828C9 /* MineViewController.swift */; };
+		94F9EF9A2477D99E00D828C9 /* ExampleBasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF992477D99E00D828C9 /* ExampleBasicContentView.swift */; };
+		94F9EF9D2477E3A900D828C9 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF9C2477E3A900D828C9 /* AddViewController.swift */; };
+		94F9EFA02477E7B900D828C9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 94F9EF9F2477E7B900D828C9 /* SnapKit */; };
+		94F9EFA32477EEBB00D828C9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA22477EEBB00D828C9 /* Extension.swift */; };
+		94F9EFA62477F36B00D828C9 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA52477F36B00D828C9 /* CourseData.swift */; };
+		94F9EFA92477F4C100D828C9 /* BoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94F9EF6C2477C2BA00D828C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F9EF4D2477C2B700D828C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94F9EF542477C2B700D828C9;
+			remoteInfo = "GPA Calculator";
+		};
+		94F9EF772477C2BA00D828C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F9EF4D2477C2B700D828C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94F9EF542477C2B700D828C9;
+			remoteInfo = "GPA Calculator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		94F9EF552477C2B700D828C9 /* GPA Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPA Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F9EF582477C2B700D828C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94F9EF612477C2BA00D828C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94F9EF642477C2BA00D828C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94F9EF662477C2BA00D828C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F9EF6B2477C2BA00D828C9 /* GPA CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GPA CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F9EF6F2477C2BA00D828C9 /* GPA_CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPA_CalculatorTests.swift; sourceTree = "<group>"; };
+		94F9EF712477C2BA00D828C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F9EF762477C2BA00D828C9 /* GPA CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GPA CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F9EF7A2477C2BA00D828C9 /* GPA_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPA_CalculatorUITests.swift; sourceTree = "<group>"; };
+		94F9EF7C2477C2BA00D828C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F9EF892477C36000D828C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		94F9EF952477D77500D828C9 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		94F9EF992477D99E00D828C9 /* ExampleBasicContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBasicContentView.swift; sourceTree = "<group>"; };
+		94F9EF9C2477E3A900D828C9 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		94F9EFA22477EEBB00D828C9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		94F9EFA52477F36B00D828C9 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
+		94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94F9EF522477C2B700D828C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F9EF932477D4EB00D828C9 /* ESTabBarController in Frameworks */,
+				94F9EFA02477E7B900D828C9 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94F9EF682477C2BA00D828C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94F9EF732477C2BA00D828C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94F9EF4C2477C2B700D828C9 = {
+			isa = PBXGroup;
+			children = (
+				94F9EF572477C2B700D828C9 /* GPA Calculator */,
+				94F9EF6E2477C2BA00D828C9 /* GPA CalculatorTests */,
+				94F9EF792477C2BA00D828C9 /* GPA CalculatorUITests */,
+				94F9EF562477C2B700D828C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94F9EF562477C2B700D828C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EF552477C2B700D828C9 /* GPA Calculator.app */,
+				94F9EF6B2477C2BA00D828C9 /* GPA CalculatorTests.xctest */,
+				94F9EF762477C2BA00D828C9 /* GPA CalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94F9EF572477C2B700D828C9 /* GPA Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EFA72477F48C00D828C9 /* Cell */,
+				94F9EFA42477F36000D828C9 /* Data */,
+				94F9EFA12477EEAF00D828C9 /* Helper */,
+				94F9EF9B2477E38F00D828C9 /* Add */,
+				94F9EF942477D76000D828C9 /* Mine */,
+				94F9EF882477C34D00D828C9 /* Home */,
+				94F9EF582477C2B700D828C9 /* AppDelegate.swift */,
+				94F9EF612477C2BA00D828C9 /* Assets.xcassets */,
+				94F9EF632477C2BA00D828C9 /* LaunchScreen.storyboard */,
+				94F9EF662477C2BA00D828C9 /* Info.plist */,
+			);
+			path = "GPA Calculator";
+			sourceTree = "<group>";
+		};
+		94F9EF6E2477C2BA00D828C9 /* GPA CalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EF6F2477C2BA00D828C9 /* GPA_CalculatorTests.swift */,
+				94F9EF712477C2BA00D828C9 /* Info.plist */,
+			);
+			path = "GPA CalculatorTests";
+			sourceTree = "<group>";
+		};
+		94F9EF792477C2BA00D828C9 /* GPA CalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EF7A2477C2BA00D828C9 /* GPA_CalculatorUITests.swift */,
+				94F9EF7C2477C2BA00D828C9 /* Info.plist */,
+			);
+			path = "GPA CalculatorUITests";
+			sourceTree = "<group>";
+		};
+		94F9EF882477C34D00D828C9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EF892477C36000D828C9 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		94F9EF942477D76000D828C9 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EF952477D77500D828C9 /* MineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		94F9EF9B2477E38F00D828C9 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EF9C2477E3A900D828C9 /* AddViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		94F9EFA12477EEAF00D828C9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EFA22477EEBB00D828C9 /* Extension.swift */,
+				94F9EF992477D99E00D828C9 /* ExampleBasicContentView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		94F9EFA42477F36000D828C9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EFA52477F36B00D828C9 /* CourseData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		94F9EFA72477F48C00D828C9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94F9EF542477C2B700D828C9 /* GPA Calculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94F9EF7F2477C2BA00D828C9 /* Build configuration list for PBXNativeTarget "GPA Calculator" */;
+			buildPhases = (
+				94F9EF512477C2B700D828C9 /* Sources */,
+				94F9EF522477C2B700D828C9 /* Frameworks */,
+				94F9EF532477C2B700D828C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GPA Calculator";
+			packageProductDependencies = (
+				94F9EF922477D4EB00D828C9 /* ESTabBarController */,
+				94F9EF9F2477E7B900D828C9 /* SnapKit */,
+			);
+			productName = "GPA Calculator";
+			productReference = 94F9EF552477C2B700D828C9 /* GPA Calculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94F9EF6A2477C2BA00D828C9 /* GPA CalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94F9EF822477C2BA00D828C9 /* Build configuration list for PBXNativeTarget "GPA CalculatorTests" */;
+			buildPhases = (
+				94F9EF672477C2BA00D828C9 /* Sources */,
+				94F9EF682477C2BA00D828C9 /* Frameworks */,
+				94F9EF692477C2BA00D828C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94F9EF6D2477C2BA00D828C9 /* PBXTargetDependency */,
+			);
+			name = "GPA CalculatorTests";
+			productName = "GPA CalculatorTests";
+			productReference = 94F9EF6B2477C2BA00D828C9 /* GPA CalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		94F9EF752477C2BA00D828C9 /* GPA CalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94F9EF852477C2BA00D828C9 /* Build configuration list for PBXNativeTarget "GPA CalculatorUITests" */;
+			buildPhases = (
+				94F9EF722477C2BA00D828C9 /* Sources */,
+				94F9EF732477C2BA00D828C9 /* Frameworks */,
+				94F9EF742477C2BA00D828C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94F9EF782477C2BA00D828C9 /* PBXTargetDependency */,
+			);
+			name = "GPA CalculatorUITests";
+			productName = "GPA CalculatorUITests";
+			productReference = 94F9EF762477C2BA00D828C9 /* GPA CalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94F9EF4D2477C2B700D828C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Ryan;
+				TargetAttributes = {
+					94F9EF542477C2B700D828C9 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					94F9EF6A2477C2BA00D828C9 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 94F9EF542477C2B700D828C9;
+					};
+					94F9EF752477C2BA00D828C9 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 94F9EF542477C2B700D828C9;
+					};
+				};
+			};
+			buildConfigurationList = 94F9EF502477C2B700D828C9 /* Build configuration list for PBXProject "GPA Calculator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94F9EF4C2477C2B700D828C9;
+			packageReferences = (
+				94F9EF912477D4EB00D828C9 /* XCRemoteSwiftPackageReference "ESTabBarController" */,
+				94F9EF9E2477E7B900D828C9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
+			productRefGroup = 94F9EF562477C2B700D828C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94F9EF542477C2B700D828C9 /* GPA Calculator */,
+				94F9EF6A2477C2BA00D828C9 /* GPA CalculatorTests */,
+				94F9EF752477C2BA00D828C9 /* GPA CalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94F9EF532477C2B700D828C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F9EF652477C2BA00D828C9 /* LaunchScreen.storyboard in Resources */,
+				94F9EF622477C2BA00D828C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94F9EF692477C2BA00D828C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94F9EF742477C2BA00D828C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94F9EF512477C2B700D828C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F9EFA62477F36B00D828C9 /* CourseData.swift in Sources */,
+				94F9EF9D2477E3A900D828C9 /* AddViewController.swift in Sources */,
+				94F9EF9A2477D99E00D828C9 /* ExampleBasicContentView.swift in Sources */,
+				94F9EF592477C2B700D828C9 /* AppDelegate.swift in Sources */,
+				94F9EFA32477EEBB00D828C9 /* Extension.swift in Sources */,
+				94F9EF8A2477C36000D828C9 /* HomeViewController.swift in Sources */,
+				94F9EFA92477F4C100D828C9 /* BoxCollectionViewCell.swift in Sources */,
+				94F9EF962477D77500D828C9 /* MineViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94F9EF672477C2BA00D828C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F9EF702477C2BA00D828C9 /* GPA_CalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94F9EF722477C2BA00D828C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F9EF7B2477C2BA00D828C9 /* GPA_CalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94F9EF6D2477C2BA00D828C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94F9EF542477C2B700D828C9 /* GPA Calculator */;
+			targetProxy = 94F9EF6C2477C2BA00D828C9 /* PBXContainerItemProxy */;
+		};
+		94F9EF782477C2BA00D828C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94F9EF542477C2B700D828C9 /* GPA Calculator */;
+			targetProxy = 94F9EF772477C2BA00D828C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94F9EF632477C2BA00D828C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94F9EF642477C2BA00D828C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94F9EF7D2477C2BA00D828C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		94F9EF7E2477C2BA00D828C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94F9EF802477C2BA00D828C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				INFOPLIST_FILE = "GPA Calculator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-Calculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94F9EF812477C2BA00D828C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				INFOPLIST_FILE = "GPA Calculator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-Calculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		94F9EF832477C2BA00D828C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				INFOPLIST_FILE = "GPA CalculatorTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-CalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPA Calculator.app/GPA Calculator";
+			};
+			name = Debug;
+		};
+		94F9EF842477C2BA00D828C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				INFOPLIST_FILE = "GPA CalculatorTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-CalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPA Calculator.app/GPA Calculator";
+			};
+			name = Release;
+		};
+		94F9EF862477C2BA00D828C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				INFOPLIST_FILE = "GPA CalculatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-CalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GPA Calculator";
+			};
+			name = Debug;
+		};
+		94F9EF872477C2BA00D828C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				INFOPLIST_FILE = "GPA CalculatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-CalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GPA Calculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94F9EF502477C2B700D828C9 /* Build configuration list for PBXProject "GPA Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94F9EF7D2477C2BA00D828C9 /* Debug */,
+				94F9EF7E2477C2BA00D828C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94F9EF7F2477C2BA00D828C9 /* Build configuration list for PBXNativeTarget "GPA Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94F9EF802477C2BA00D828C9 /* Debug */,
+				94F9EF812477C2BA00D828C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94F9EF822477C2BA00D828C9 /* Build configuration list for PBXNativeTarget "GPA CalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94F9EF832477C2BA00D828C9 /* Debug */,
+				94F9EF842477C2BA00D828C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94F9EF852477C2BA00D828C9 /* Build configuration list for PBXNativeTarget "GPA CalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94F9EF862477C2BA00D828C9 /* Debug */,
+				94F9EF872477C2BA00D828C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		94F9EF912477D4EB00D828C9 /* XCRemoteSwiftPackageReference "ESTabBarController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eggswift/ESTabBarController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
+		94F9EF9E2477E7B900D828C9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		94F9EF922477D4EB00D828C9 /* ESTabBarController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94F9EF912477D4EB00D828C9 /* XCRemoteSwiftPackageReference "ESTabBarController" */;
+			productName = ESTabBarController;
+		};
+		94F9EF9F2477E7B900D828C9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94F9EF9E2477E7B900D828C9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 94F9EF4D2477C2B700D828C9 /* Project object */;
+}

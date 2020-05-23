@@ -16,7 +16,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
     
     lazy var leftImageView: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(systemName: "heart.circle.fill")
+        let image = UIImage(named: "red")
         imageView.image = image
         return imageView
     }()
@@ -25,6 +25,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "4"
         label.textAlignment = .center
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         return label
     }()
@@ -106,16 +107,16 @@ class BoxCollectionViewCell: UICollectionViewCell {
         leftBottomLabel.snp.makeConstraints { (maker) in
             maker.left.equalToSuperview().offset(20.fit)
             maker.bottom.equalToSuperview().offset(-5.fit)
-            maker.height.equalTo(45.fit)
-            maker.width.equalTo(45.fit)
+            maker.height.equalTo(40.fit)
+            maker.width.equalTo(40.fit)
         }
         
         addSubview(rightLabel)
         rightLabel.snp.makeConstraints { (maker) in
-            maker.right.equalToSuperview().offset(-25.fit)
-            maker.top.equalToSuperview()
-            maker.height.equalTo(100)
-            maker.height.equalTo(80)
+            maker.right.equalToSuperview().offset(-10.fit)
+            maker.centerY.equalTo(self.leftImageView.snp.centerY)
+            maker.width.equalTo(50.fit)
+            maker.height.equalTo(50.fit)
         }
     }
     

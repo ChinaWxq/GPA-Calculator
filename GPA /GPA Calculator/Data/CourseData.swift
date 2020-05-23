@@ -50,9 +50,10 @@ var courseData = [
     Course(term: .four, name: "毕业设计", credit: 3, grade: 99),
 ]
 
-/// 根据学期进行分类的字典
-var categoryData: [Int : [Course]]{
-    Dictionary(
+var categoryData = updateCategoryData()
+
+func updateCategoryData() -> [Int: [Course]] {
+    return Dictionary(
         grouping: courseData,
         by: { $0.term.rawValue}
     )

@@ -21,6 +21,7 @@
 		94F9EFA32477EEBB00D828C9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA22477EEBB00D828C9 /* Extension.swift */; };
 		94F9EFA62477F36B00D828C9 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA52477F36B00D828C9 /* CourseData.swift */; };
 		94F9EFA92477F4C100D828C9 /* BoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */; };
+		94F9EFAE24795A5E00D828C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFAD24795A5E00D828C9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		94F9EFA22477EEBB00D828C9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		94F9EFA52477F36B00D828C9 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCollectionViewCell.swift; sourceTree = "<group>"; };
+		94F9EFAD24795A5E00D828C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,6 @@
 				94F9EFA72477F48C00D828C9 /* Cell */,
 				94F9EFA42477F36000D828C9 /* Data */,
 				94F9EFA12477EEAF00D828C9 /* Helper */,
-				94F9EF9B2477E38F00D828C9 /* Add */,
 				94F9EF942477D76000D828C9 /* Mine */,
 				94F9EF882477C34D00D828C9 /* Home */,
 				94F9EF582477C2B700D828C9 /* AppDelegate.swift */,
@@ -146,6 +147,8 @@
 		94F9EF882477C34D00D828C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				94F9EF9B2477E38F00D828C9 /* Add */,
+				94F9EFAC24795A4400D828C9 /* Detail */,
 				94F9EF892477C36000D828C9 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -190,6 +193,14 @@
 				94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		94F9EFAC24795A4400D828C9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				94F9EFAD24795A5E00D828C9 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F9EFAE24795A5E00D828C9 /* DetailViewController.swift in Sources */,
 				94F9EFA62477F36B00D828C9 /* CourseData.swift in Sources */,
 				94F9EF9D2477E3A900D828C9 /* AddViewController.swift in Sources */,
 				94F9EF9A2477D99E00D828C9 /* ExampleBasicContentView.swift in Sources */,
@@ -503,8 +515,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				DEVELOPMENT_TEAM = 3637HX3BF8;
 				INFOPLIST_FILE = "GPA Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -521,8 +534,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				DEVELOPMENT_TEAM = 3637HX3BF8;
 				INFOPLIST_FILE = "GPA Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,7 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

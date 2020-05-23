@@ -14,6 +14,8 @@ let boxCellIdentifier = "boxCell"
 /// Home界面视图控制器
 class HomeViewController: UIViewController {
     
+    /// 根据学期进行分类的字典
+    
     // MARK: 视图
     
     /// 搜索视图
@@ -39,9 +41,10 @@ class HomeViewController: UIViewController {
     /// 搜索框
     lazy var searchBar: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "搜索"
+        textField.attributedPlaceholder = NSAttributedString.init(string: "搜索", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         textField.returnKeyType = .go
-        textField.backgroundColor = .clear
+        textField.delegate = self
+        //textField.backgroundColor = .clear
         textField.clearButtonMode = .never
         return textField
     }()
@@ -81,6 +84,7 @@ class HomeViewController: UIViewController {
         let label = UILabel()
         label.text = String(courseData.count)
         label.textAlignment = .center
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         return label
     }()
@@ -163,6 +167,8 @@ class HomeViewController: UIViewController {
     /// 按钮点击事件
     @objc func clickButton() {
         let addViewController = AddViewController()
+        addViewController.delegate = self
+        addViewController.modalPresentationStyle = .overCurrentContext
         present(addViewController, animated: true, completion: nil)
     }
     
@@ -196,13 +202,20 @@ class HomeViewController: UIViewController {
         
         allCourseBoxView.addSubview(rightLabel)
         rightLabel.snp.makeConstraints { (maker) in
-            maker.right.equalToSuperview().offset(-15.fit)
-            maker.top.equalToSuperview()
-            maker.height.equalTo(100)
-            maker.height.equalTo(60)
+            maker.right.equalToSuperview().offset(-10.fit)
+            maker.centerY.equalTo(self.leftImageView.snp.centerY)
+            maker.width.equalTo(50.fit)
+            maker.height.equalTo(50.fit)
         }
         
-        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(clickLongBox))
+        allCourseBoxView.addGestureRecognizer(gesture)
+    }
+    
+    @objc func clickLongBox() {
+        let detailViewController = DetailViewController()
+        detailViewController.courses = courseData
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     /// 初始化搜索条
@@ -246,6 +259,7 @@ class HomeViewController: UIViewController {
     
     /// 视图即将呈现，隐藏导航条
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
@@ -276,4 +290,40 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryData.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        detailViewController.courses = categoryData[indexPath.row]
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
+
+// MARK: UITextFieldDelegate
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+//
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+// MARK: 自定义的AddViewDataSourceDelegate
+
+extension HomeViewController: AddViewDateScourceDelegate {
+    func passValueToAddData(item: Course) {
+        if item.credit > 0 && item.grade > 0 && item.name != "" {
+            courseData.append(item)
+            categoryData = updateCategoryData()
+            print(courseData.count)
+            collectionView.reloadData()
+            self.rightLabel.text = String(courseData.count)
+        }
+    }
+
 }

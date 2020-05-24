@@ -16,83 +16,66 @@ protocol AddViewDateScourceDelegate {
 /// Home页添加课程视图控制器
 class AddViewController: UIViewController {
     
+    // MARK: 属性
+    
     private var course: Course?
     
     var delegate: AddViewDateScourceDelegate?
     
     // MARK: 视图
     
-    lazy var topLeftLabel: UILabel = {
+    lazy var topLeftTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "添加课程"
-        label.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
+        label.font = UIFont.init(name: semiboldFontName, size: navigationFontSize)
         label.textColor = .black
         label.textAlignment = .left
         return label
     }()
     
-    lazy var courseTermLabel: UILabel = {
+    lazy var leftCourseTermLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "学年"
         label.textColor = .black
         label.textAlignment = .left
         return label
     }()
     
-    lazy var courseNameLabel: UILabel = {
+    lazy var leftCourseNameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "课程"
         label.textColor = .black
         label.textAlignment = .left
         return label
     }()
     
-    lazy var courseCreditLabel: UILabel = {
+    lazy var leftCourseCreditLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "学分"
         label.textColor = .black
         label.textAlignment = .left
         return label
     }()
     
-    lazy var courseGradeLabel: UILabel = {
+    lazy var leftCourseGradeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "成绩"
         label.textColor = .black
         label.textAlignment = .left
         return label
     }()
     
-    lazy var topRightCloseButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "close"), for: .normal)
-        button.addTarget(self, action: #selector(clickCloseButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var rightCourseNameTextField: UITextField = {
-        let textField = UITextField()
-        textField.delegate = self
-        textField.returnKeyType = .go
-        textField.clearButtonMode = .never
-        return textField
-    }()
-    
-    lazy var rightCourseCreditPickerView: UIPickerView = {
-        let pickerView = UIPickerView()
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        return pickerView
-    }()
-    
-    lazy var rightCourseGradeTextField: UITextField = {
-        let textField = UITextField()
-        textField.delegate = self
-        return textField
+    lazy var leftMarkLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
+        label.text = "备注"
+        label.textColor = .black
+        label.textAlignment = .left
+        return label
     }()
     
     lazy var backView: UIView = {
@@ -112,6 +95,36 @@ class AddViewController: UIViewController {
         let effectView = UIVisualEffectView(effect: effect)
         effectView.frame = self.view.frame
         return effectView
+    }()
+    
+    lazy var topRightCloseButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.addTarget(self, action: #selector(clickCloseButton), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var rightCourseNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self
+        textField.textAlignment = .center
+        textField.returnKeyType = .next
+        return textField
+    }()
+    
+    lazy var rightCourseCreditPickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        return pickerView
+    }()
+    
+    lazy var rightCourseGradeTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self
+        textField.textAlignment = .center
+        textField.returnKeyType = .done
+        return textField
     }()
     
     lazy var rightCourseTermSegmentControl: UISegmentedControl = {
@@ -173,6 +186,7 @@ class AddViewController: UIViewController {
     }()
     
     
+    
     // MARK: 方法
     
     
@@ -188,12 +202,12 @@ class AddViewController: UIViewController {
         view.backgroundColor = .clear
         view.addSubview(effectView)
         view.addSubview(backView)
-        backView.addSubview(courseTermLabel)
-        backView.addSubview(topLeftLabel)
+        backView.addSubview(leftCourseTermLabel)
+        backView.addSubview(leftCourseGradeLabel)
+        backView.addSubview(leftCourseNameLabel)
+        backView.addSubview(leftCourseCreditLabel)
         backView.addSubview(topRightCloseButton)
-        backView.addSubview(courseNameLabel)
-        backView.addSubview(courseCreditLabel)
-        backView.addSubview(courseGradeLabel)
+        backView.addSubview(topLeftTitleLabel)
         courseNameTextFieldView.addSubview(rightCourseNameTextField)
         backView.addSubview(courseNameTextFieldView)
         courseGradeTextFieldView.addSubview(rightCourseGradeTextField)
@@ -203,7 +217,8 @@ class AddViewController: UIViewController {
         backView.addSubview(bottomOKButton)
         backView.addSubview(rightCourseTermSegmentControl)
         
-        topLeftLabel.snp.makeConstraints { (maker) in
+        
+        topLeftTitleLabel.snp.makeConstraints { (maker) in
             maker.left.equalToSuperview().offset(20.fit)
             maker.top.equalToSuperview().offset(20.fit)
             maker.width.equalTo(200.fit)
@@ -217,39 +232,38 @@ class AddViewController: UIViewController {
             maker.height.equalTo(38.fit)
         }
         
-        courseTermLabel.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(20.fit)
-            maker.top.equalTo(self.topLeftLabel.snp.bottom).offset(10.fit)
+        leftCourseTermLabel.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(25.fit)
+            maker.top.equalTo(self.topLeftTitleLabel.snp.bottom).offset(10.fit)
             maker.width.equalTo(200.fit)
             maker.height.equalTo(50.fit)
         }
         
-        courseNameLabel.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(20.fit)
-            maker.top.equalTo(self.courseTermLabel.snp.bottom).offset(10.fit)
+        leftCourseNameLabel.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(25.fit)
+            maker.top.equalTo(self.leftCourseTermLabel.snp.bottom).offset(10.fit)
             maker.width.equalTo(200.fit)
             maker.height.equalTo(50.fit)
         }
         
-        courseCreditLabel.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(20.fit)
-            maker.top.equalTo(self.courseNameLabel.snp.bottom).offset(10.fit)
+        leftCourseCreditLabel.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(25.fit)
+            maker.top.equalTo(self.leftCourseNameLabel.snp.bottom).offset(10.fit)
             maker.width.equalTo(200.fit)
             maker.height.equalTo(50.fit)
         }
         
-        courseGradeLabel.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(20.fit)
-            maker.top.equalTo(self.courseCreditLabel.snp.bottom).offset(10.fit)
+        leftCourseGradeLabel.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(25.fit)
+            maker.top.equalTo(self.leftCourseCreditLabel.snp.bottom).offset(10.fit)
             maker.width.equalTo(200.fit)
             maker.height.equalTo(50.fit)
         }
-        
         
         
         courseNameTextFieldView.snp.makeConstraints { (maker) in
             maker.right.equalToSuperview().offset(-30.fit)
-            maker.centerY.equalTo(self.courseNameLabel.snp.centerY)
+            maker.centerY.equalTo(self.leftCourseNameLabel.snp.centerY)
             maker.height.equalTo(40.fit)
             maker.width.equalTo(180.fit)
         }
@@ -257,28 +271,28 @@ class AddViewController: UIViewController {
         
         courseGradeTextFieldView.snp.makeConstraints { (maker) in
             maker.right.equalToSuperview().offset(-30.fit)
-            maker.centerY.equalTo(self.courseGradeLabel.snp.centerY)
+            maker.centerY.equalTo(self.leftCourseGradeLabel.snp.centerY)
             maker.height.equalTo(40.fit)
             maker.width.equalTo(180.fit)
         }
         
         courseCreditPickerView.snp.makeConstraints { (maker) in
             maker.right.equalToSuperview().offset(-30.fit)
-            maker.centerY.equalTo(self.courseCreditLabel.snp.centerY)
-            maker.width.equalTo(50.fit)
-            maker.height.equalTo(50.fit)
+            maker.centerY.equalTo(self.leftCourseCreditLabel.snp.centerY)
+            maker.width.equalTo(180.fit)
+            maker.height.equalTo(40.fit)
         }
         
         rightCourseTermSegmentControl.snp.makeConstraints { (maker) in
             maker.right.equalToSuperview().offset(-30.fit)
-            maker.centerY.equalTo(self.courseTermLabel.snp.centerY)
+            maker.centerY.equalTo(self.leftCourseTermLabel.snp.centerY)
             maker.height.equalTo(40.fit)
             maker.width.equalTo(180.fit)
         }
         
         rightCourseCreditPickerView.snp.makeConstraints { (maker) in
-            maker.right.bottom.equalToSuperview().offset(-5.fit)
-            maker.left.top.equalToSuperview().offset(5.fit)
+            maker.right.bottom.equalToSuperview()
+            maker.left.top.equalToSuperview()
         }
         
         rightCourseNameTextField.snp.makeConstraints { (maker) in
@@ -292,9 +306,9 @@ class AddViewController: UIViewController {
         }
         
         bottomOKButton.snp.makeConstraints { (maker) in
-            maker.bottom.equalToSuperview().offset(-30.fit)
-            maker.right.equalToSuperview().offset(-40.fit)
-            maker.left.equalToSuperview().offset(40.fit)
+            maker.bottom.equalToSuperview().offset(-20.fit)
+            maker.right.equalToSuperview().offset(-60.fit)
+            maker.left.equalToSuperview().offset(60.fit)
             maker.height.equalTo(40.fit)
         }
         
@@ -314,7 +328,7 @@ class AddViewController: UIViewController {
         let deltaY = keyBoardBounds.size.height / 2
         
         let animations:(() -> Void) = {
-            self.backView.transform = CGAffineTransform(translationX: 0,y: -deltaY)
+            self.view.transform = CGAffineTransform(translationX: 0,y: -deltaY)
         }
             
         if duration > 0 {
@@ -337,7 +351,7 @@ class AddViewController: UIViewController {
         let duration = (userInfo.object(forKey: UIResponder.keyboardAnimationDurationUserInfoKey) as! NSNumber).doubleValue
         
         let animations:(() -> Void) = {
-            self.backView.transform = CGAffineTransform.identity
+            self.view.transform = CGAffineTransform.identity
         }
             
         if duration > 0 {
@@ -356,10 +370,22 @@ class AddViewController: UIViewController {
     }
     
     @objc func clickCloseButton() {
+        if rightCourseGradeTextField.isEditing {
+            rightCourseGradeTextField.resignFirstResponder()
+        }
+        if rightCourseNameTextField.isEditing {
+            rightCourseNameTextField.resignFirstResponder()
+        }
         dismiss(animated: true, completion: nil)
     }
     
     @objc func clickOKButton() {
+        if rightCourseGradeTextField.isEditing {
+            rightCourseGradeTextField.resignFirstResponder()
+        }
+        if rightCourseNameTextField.isEditing {
+            rightCourseNameTextField.resignFirstResponder()
+        }
         if let name = rightCourseNameTextField.text {
             course?.name = name
         }
@@ -367,9 +393,6 @@ class AddViewController: UIViewController {
             course?.grade = num
         }
         course?.credit = rightCourseCreditPickerView.selectedRow(inComponent: 0) + 1
-        if course != nil {
-            print(course!)
-        }
         delegate?.passValueToAddData(item: course!)
         dismiss(animated: true, completion: nil)
     }
@@ -396,7 +419,6 @@ extension AddViewController: UITextFieldDelegate {
         return true
     }
     
-    
 }
 
 
@@ -416,7 +438,7 @@ extension AddViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let lable = UILabel(frame: CGRect(x: 0, y: 0, width: 50.fit, height: 50.fit))
+        let lable = UILabel(frame: CGRect(x: 0, y: 0, width: 180.fit, height: 40.fit))
         lable.textColor = .black
         lable.textAlignment = .center
         lable.font = UIFont.systemFont(ofSize: 20)

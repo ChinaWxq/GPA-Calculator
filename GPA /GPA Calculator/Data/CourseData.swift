@@ -17,6 +17,7 @@ enum Term: Int {
     case two = 1
     case three = 2
     case four = 3
+    case all = 4
 }
 
 /// 课程结构体
@@ -28,33 +29,48 @@ struct Course {
 }
 
 /// 课程数据
-var courseData = [
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .one, name: "计算机导论", credit: 4, grade: 99),
-    Course(term: .two, name: "计算机操作系统", credit: 4, grade: 90),
-    Course(term: .two, name: "计算机操作系统", credit: 4, grade: 90),
-    Course(term: .two, name: "计算机操作系统", credit: 4, grade: 90),
-    Course(term: .two, name: "计算机操作系统", credit: 4, grade: 90),
-    Course(term: .two, name: "计算机操作系统", credit: 4, grade: 90),
-    Course(term: .three, name: "计算机网络", credit: 4, grade: 89),
-    Course(term: .three, name: "计算机网络", credit: 4, grade: 89),
-    Course(term: .three, name: "计算机网络", credit: 4, grade: 89),
-    Course(term: .four, name: "毕业设计", credit: 3, grade: 99),
-]
+var courseData: [Course] = []
 
 var categoryData = updateCategoryData()
 
-func updateCategoryData() -> [Int: [Course]] {
+func updateCategoryData() -> [Int: [Course]]? {
     return Dictionary(
         grouping: courseData,
         by: { $0.term.rawValue}
     )
+}
+
+
+func calculateGPA(allCourses: [Course]?) -> CGFloat {
+    guard allCourses != nil else {
+        return 0.0
+    }
+    guard allCourses!.count > 0 else {
+        return 0.0
+    }
+    var allCourseGP: CGFloat = 0.0
+    var allCourseCredit: CGFloat = 0.0
+    // 绩点是评估学习成绩的一种方法，国内大部分高校通用的计算方法是：绩点=分数/10-5，学分绩点=学分*绩点=学分*（分数/10-5）（90分以上按90分计算）。
+    for course in allCourses! {
+        let temp = course.grade / 10 - 5
+        let creditGP = course.credit * temp
+        allCourseGP = allCourseGP + CGFloat(creditGP)
+        allCourseCredit = allCourseCredit + CGFloat(course.credit)
+    }
+    return allCourseGP / allCourseCredit
+}
+
+
+func getData() {
+    let plistPath = Bundle.main.path(forResource: "UserData", ofType: ".plist")
+    let array: NSArray = NSArray(contentsOfFile: plistPath!)!
+    for item in array {
+        let data = item as! NSDictionary
+        let name = data.value(forKey: "name") as! String
+        let credit = data.value(forKey: "credit") as! Int
+        let term = data.value(forKey: "term") as! Int
+        let grade = data.value(forKey: "grade") as! Int
+        let course = Course(term: Term(rawValue: term)!, name: name, credit: credit, grade: grade)
+        courseData.append(course)
+    }
 }

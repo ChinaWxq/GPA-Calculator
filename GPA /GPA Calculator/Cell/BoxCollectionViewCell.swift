@@ -26,7 +26,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
         label.text = "4"
         label.textAlignment = .center
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.init(name: semiboldFontName, size: titleFontSize)
         return label
     }()
     
@@ -35,7 +35,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
         label.text = "大一"
         label.textAlignment = .center
         label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        label.font = UIFont.init(name: mediumFontName, size: assistFontSize)
         return label
     }()
     

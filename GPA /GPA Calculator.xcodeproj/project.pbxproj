@@ -22,6 +22,10 @@
 		94F9EFA62477F36B00D828C9 /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA52477F36B00D828C9 /* CourseData.swift */; };
 		94F9EFA92477F4C100D828C9 /* BoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */; };
 		94F9EFAE24795A5E00D828C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFAD24795A5E00D828C9 /* DetailViewController.swift */; };
+		94F9EFB0247A5ACC00D828C9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFAF247A5ACC00D828C9 /* Helper.swift */; };
+		94F9EFB2247A7F6900D828C9 /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F9EFB1247A7F6900D828C9 /* UserData.plist */; };
+		94F9EFB4247A947400D828C9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EFB3247A947400D828C9 /* DetailTableViewCell.swift */; };
+		94F9EFB7247A9E0D00D828C9 /* KDCircularProgress in Frameworks */ = {isa = PBXBuildFile; productRef = 94F9EFB6247A9E0D00D828C9 /* KDCircularProgress */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,9 @@
 		94F9EFA52477F36B00D828C9 /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxCollectionViewCell.swift; sourceTree = "<group>"; };
 		94F9EFAD24795A5E00D828C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		94F9EFAF247A5ACC00D828C9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		94F9EFB1247A7F6900D828C9 /* UserData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
+		94F9EFB3247A947400D828C9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94F9EF932477D4EB00D828C9 /* ESTabBarController in Frameworks */,
+				94F9EFB7247A9E0D00D828C9 /* KDCircularProgress in Frameworks */,
 				94F9EFA02477E7B900D828C9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +130,7 @@
 				94F9EF612477C2BA00D828C9 /* Assets.xcassets */,
 				94F9EF632477C2BA00D828C9 /* LaunchScreen.storyboard */,
 				94F9EF662477C2BA00D828C9 /* Info.plist */,
+				94F9EFB1247A7F6900D828C9 /* UserData.plist */,
 			);
 			path = "GPA Calculator";
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 			children = (
 				94F9EFA22477EEBB00D828C9 /* Extension.swift */,
 				94F9EF992477D99E00D828C9 /* ExampleBasicContentView.swift */,
+				94F9EFAF247A5ACC00D828C9 /* Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -191,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */,
+				94F9EFB3247A947400D828C9 /* DetailTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 			packageProductDependencies = (
 				94F9EF922477D4EB00D828C9 /* ESTabBarController */,
 				94F9EF9F2477E7B900D828C9 /* SnapKit */,
+				94F9EFB6247A9E0D00D828C9 /* KDCircularProgress */,
 			);
 			productName = "GPA Calculator";
 			productReference = 94F9EF552477C2B700D828C9 /* GPA Calculator.app */;
@@ -298,6 +310,7 @@
 			packageReferences = (
 				94F9EF912477D4EB00D828C9 /* XCRemoteSwiftPackageReference "ESTabBarController" */,
 				94F9EF9E2477E7B900D828C9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				94F9EFB5247A9E0D00D828C9 /* XCRemoteSwiftPackageReference "KDCircularProgress" */,
 			);
 			productRefGroup = 94F9EF562477C2B700D828C9 /* Products */;
 			projectDirPath = "";
@@ -317,6 +330,7 @@
 			files = (
 				94F9EF652477C2BA00D828C9 /* LaunchScreen.storyboard in Resources */,
 				94F9EF622477C2BA00D828C9 /* Assets.xcassets in Resources */,
+				94F9EFB2247A7F6900D828C9 /* UserData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +362,10 @@
 				94F9EF592477C2B700D828C9 /* AppDelegate.swift in Sources */,
 				94F9EFA32477EEBB00D828C9 /* Extension.swift in Sources */,
 				94F9EF8A2477C36000D828C9 /* HomeViewController.swift in Sources */,
+				94F9EFB0247A5ACC00D828C9 /* Helper.swift in Sources */,
 				94F9EFA92477F4C100D828C9 /* BoxCollectionViewCell.swift in Sources */,
 				94F9EF962477D77500D828C9 /* MineViewController.swift in Sources */,
+				94F9EFB4247A947400D828C9 /* DetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +706,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		94F9EFB5247A9E0D00D828C9 /* XCRemoteSwiftPackageReference "KDCircularProgress" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaandedeoglu/KDCircularProgress";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -702,6 +726,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 94F9EF9E2477E7B900D828C9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		94F9EFB6247A9E0D00D828C9 /* KDCircularProgress */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94F9EFB5247A9E0D00D828C9 /* XCRemoteSwiftPackageReference "KDCircularProgress" */;
+			productName = KDCircularProgress;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

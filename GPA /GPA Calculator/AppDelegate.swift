@@ -12,11 +12,15 @@ import ESTabBarController
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        getData()
         window = UIWindow.init()
-        window?.rootViewController = customTabBarViewController()
+        let navigationController = UINavigationController(rootViewController: HomeViewController())
+        window?.rootViewController = navigationController
+        //window?.rootViewController = customTabBarViewController()
         window?.makeKeyAndVisible()
         return true
     }

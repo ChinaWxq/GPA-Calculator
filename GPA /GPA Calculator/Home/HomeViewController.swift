@@ -62,8 +62,8 @@ class HomeViewController: UIViewController {
         
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        flowLayout.itemSize = CGSize(width: 165.fit, height: 100.fit)
-        flowLayout.minimumLineSpacing = 10.fit
+        flowLayout.itemSize = CGSize(width: 175.fit, height: 100.fit)
+        flowLayout.minimumLineSpacing = 5.fit
         flowLayout.minimumInteritemSpacing = 5.fit
         collectionView.backgroundColor = .white
         collectionView.delegate = self
@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
         label.text = String(courseData.count)
         label.textAlignment = .center
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.init(name: semiboldFontName, size: titleFontSize)
         return label
     }()
     
@@ -95,7 +95,7 @@ class HomeViewController: UIViewController {
         label.text = "全部"
         label.textAlignment = .center
         label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        label.font = UIFont.init(name: mediumFontName, size: assistFontSize)
         return label
     }()
     
@@ -179,7 +179,7 @@ class HomeViewController: UIViewController {
         
         
         allCourseBoxView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(self.collectionView.snp.bottom).offset(10.fit)
+            maker.top.equalTo(self.collectionView.snp.bottom).offset(5.fit)
             maker.left.equalTo(self.view.snp.left).offset(20.fit)
             maker.right.equalTo(self.view.snp.right).offset(-20.fit)
             maker.height.equalTo(100.fit)
@@ -213,8 +213,10 @@ class HomeViewController: UIViewController {
     }
     
     @objc func clickLongBox() {
-        let detailViewController = DetailViewController()
-        detailViewController.courses = courseData
+        let detailViewController = DetailViewController(type: .all, courses: courseData)
+        print("---")
+        print(courseData)
+        print("---")
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -260,7 +262,14 @@ class HomeViewController: UIViewController {
     /// 视图即将呈现，隐藏导航条
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateView()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func updateView() {
+        categoryData = updateCategoryData()
+        rightLabel.text = String(courseData.count)
+        collectionView.reloadData()
     }
     
     /// 视图即将消失，显示导航条
@@ -278,7 +287,7 @@ extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BoxCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "boxCell", for: indexPath) as! BoxCollectionViewCell
-        cell.updateUI(with: indexPath.row , count: categoryData[indexPath.row]?.count ?? 0)
+        cell.updateUI(with: indexPath.row , count: categoryData?[indexPath.row]?.count ?? 0)
         return cell
     }
     
@@ -288,12 +297,11 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryData.count
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
-        detailViewController.courses = categoryData[indexPath.row]
+        let detailViewController = DetailViewController.init(type: Term.init(rawValue: indexPath.row)!, courses: categoryData?[indexPath.row])
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
@@ -318,9 +326,30 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController: AddViewDateScourceDelegate {
     func passValueToAddData(item: Course) {
         if item.credit > 0 && item.grade > 0 && item.name != "" {
+            
+            
+            // plist存储写入逻辑
+            let plistPath = Bundle.main.path(forResource: "UserData", ofType: ".plist")
+            var array: NSMutableArray = NSMutableArray(contentsOfFile: plistPath!)!
+            let dictionary: NSMutableDictionary = [:]
+            let name = item.name as NSString
+            let term = item.term.rawValue as NSNumber
+            let grade = item.grade as NSNumber
+            let credit = item.credit as NSNumber
+            dictionary.setValue(name, forKey: "name")
+            dictionary.setValue(term, forKey: "term")
+            dictionary.setValue(grade, forKey: "grade")
+            dictionary.setValue(credit, forKey: "credit")
+            array.add(dictionary)
+            array.write(toFile: plistPath!, atomically: true)
+            array = NSMutableArray(contentsOfFile: plistPath!)!
+            print(array)
+            
             courseData.append(item)
             categoryData = updateCategoryData()
-            print(courseData.count)
+            print("---")
+            print(courseData)
+            print("---")
             collectionView.reloadData()
             self.rightLabel.text = String(courseData.count)
         }

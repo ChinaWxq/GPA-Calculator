@@ -14,8 +14,7 @@
 import Foundation
 import UIKit
 
-let ScreenWidth = UIScreen.main.bounds.width
-let ScreenHeight = UIScreen.main.bounds.height
+
 
 extension Double {
     var fit: CGFloat {

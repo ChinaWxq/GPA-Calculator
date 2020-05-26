@@ -29,7 +29,9 @@ struct Course {
 }
 
 /// 课程数据
-var courseData: [Course] = []
+var courseData: [Course] = [Course(term: .one, name: "A", credit: 2, grade: 30),
+Course(term: .one, name: "B", credit: 3, grade: 40),
+Course(term: .one, name: "C", credit: 2, grade: 50)]
 
 var categoryData = updateCategoryData()
 
@@ -62,9 +64,14 @@ func calculateGPA(allCourses: [Course]?) -> CGFloat {
 
 
 func getData() {
-    let plistPath = Bundle.main.path(forResource: "UserData", ofType: ".plist")
-    let array: NSArray = NSArray(contentsOfFile: plistPath!)!
-    for item in array {
+    let filePath: String = NSHomeDirectory() + "/Documents/test.plist"
+    let array: NSArray? = NSArray(contentsOfFile: filePath)
+    courseData.removeAll()
+    guard array != nil else {
+        return
+    }
+    for item in array! {
+        print(item)
         let data = item as! NSDictionary
         let name = data.value(forKey: "name") as! String
         let credit = data.value(forKey: "credit") as! Int
@@ -73,4 +80,5 @@ func getData() {
         let course = Course(term: Term(rawValue: term)!, name: name, credit: credit, grade: grade)
         courseData.append(course)
     }
+    print(courseData)
 }

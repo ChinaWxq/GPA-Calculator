@@ -20,9 +20,6 @@ class DetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.type = type
         self.courses = courses
-        print("---")
-        print(courseData)
-        print("---")
     }
     
     required init?(coder: NSCoder) {
@@ -121,19 +118,29 @@ extension DetailViewController: UITableViewDelegate {
         if editingStyle == .delete {
             for (index, course) in courseData.enumerated() {
                 if course.credit == courses![indexPath.row].credit && course.name == courses![indexPath.row].name {
-                    print(courseData)
-                    print(courses!)
-                    courses?.remove(at: indexPath.row)
                     courseData.remove(at: index)
+                    courses?.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     
-                    // 删除更新数据写入文件
-                    let plistPath = Bundle.main.path(forResource: "UserData", ofType: ".plist")
-                    let array: NSMutableArray = NSMutableArray(contentsOfFile: plistPath!)!
-                    array.removeObject(at: index)
-                    array.write(toFile: plistPath!, atomically: true)
+                    // 修改plist数据
+                    let filePath: String = NSHomeDirectory() + "/Documents/test.plist"
+                    let array: NSMutableArray = NSMutableArray()
+                    for item in courseData {
+                        let dictionary: NSMutableDictionary = [:]
+                        let name = item.name as NSString
+                        let term = item.term.rawValue as NSNumber
+                        let grade = item.grade as NSNumber
+                        let credit = item.credit as NSNumber
+                        dictionary.setValue(name, forKey: "name")
+                        dictionary.setValue(term, forKey: "term")
+                        dictionary.setValue(grade, forKey: "grade")
+                        dictionary.setValue(credit, forKey: "credit")
+                        array.add(dictionary)
+                    }
+                    array.write(toFile: filePath, atomically: false)
                     topLeftCourseNumberLabel.text =  String(format: "总计:%2d门", courses?.count ?? 0)
                     topRightCourseNumberLabel.text = String(format: "绩点:%4.1f", calculateGPA(allCourses: courses))
+                    return
 //                    array = NSMutableArray(contentsOfFile: plistPath!)!
 //                    print(array)
                 }

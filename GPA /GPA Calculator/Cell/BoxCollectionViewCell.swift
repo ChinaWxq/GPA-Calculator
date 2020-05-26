@@ -34,6 +34,7 @@ class BoxCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "大一"
         label.textAlignment = .center
+        label.numberOfLines = 0
         label.textColor = .gray
         label.font = UIFont.init(name: mediumFontName, size: assistFontSize)
         return label

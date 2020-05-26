@@ -214,9 +214,6 @@ class HomeViewController: UIViewController {
     
     @objc func clickLongBox() {
         let detailViewController = DetailViewController(type: .all, courses: courseData)
-        print("---")
-        print(courseData)
-        print("---")
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -327,29 +324,29 @@ extension HomeViewController: AddViewDateScourceDelegate {
     func passValueToAddData(item: Course) {
         if item.credit > 0 && item.grade > 0 && item.name != "" {
             
-            
-            // plist存储写入逻辑
-            let plistPath = Bundle.main.path(forResource: "UserData", ofType: ".plist")
-            var array: NSMutableArray = NSMutableArray(contentsOfFile: plistPath!)!
-            let dictionary: NSMutableDictionary = [:]
-            let name = item.name as NSString
-            let term = item.term.rawValue as NSNumber
-            let grade = item.grade as NSNumber
-            let credit = item.credit as NSNumber
-            dictionary.setValue(name, forKey: "name")
-            dictionary.setValue(term, forKey: "term")
-            dictionary.setValue(grade, forKey: "grade")
-            dictionary.setValue(credit, forKey: "credit")
-            array.add(dictionary)
-            array.write(toFile: plistPath!, atomically: true)
-            array = NSMutableArray(contentsOfFile: plistPath!)!
-            print(array)
-            
             courseData.append(item)
             categoryData = updateCategoryData()
-            print("---")
-            print(courseData)
-            print("---")
+            
+            // plist存储写入逻辑
+            let filePath: String = NSHomeDirectory() + "/Documents/test.plist"
+            let array: NSMutableArray = NSMutableArray()
+            // print(courseData)
+            for item in courseData {
+                let dictionary: NSMutableDictionary = [:]
+                let name = item.name as NSString
+                let term = item.term.rawValue as NSNumber
+                let grade = item.grade as NSNumber
+                let credit = item.credit as NSNumber
+                dictionary.setValue(name, forKey: "name")
+                dictionary.setValue(term, forKey: "term")
+                dictionary.setValue(grade, forKey: "grade")
+                dictionary.setValue(credit, forKey: "credit")
+                array.add(dictionary)
+            }
+            array.write(toFile: filePath, atomically: false)
+            
+            
+            
             collectionView.reloadData()
             self.rightLabel.text = String(courseData.count)
         }

@@ -13,7 +13,6 @@ import UIKit
 let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
 
-
 // 字体
 let lightFontName = "PingFangSC-Light"
 let mediumFontName = "PingFangSC-Medium"
@@ -23,7 +22,7 @@ let semiboldFontName = "PingFangSC-Semibold"
 let navigationFontSize: CGFloat = 34
 let titleFontSize: CGFloat = 28
 let contenFontSize: CGFloat = 24
-let assistFontSize: CGFloat = 18
+let assistFontSize: CGFloat = 16
 
 
 // 备注
@@ -38,9 +37,13 @@ func gradientColor(grade: Double) -> [UIColor] {
         return [UIColor.init(hex: 0x0c7bb3), UIColor.init(hex: 0xf2baeb)]
     } else if 80 <= grade && grade < 90 {
         return [UIColor.init(hex: 0xc973ff), UIColor.init(hex: 0xaebafb)]
-    } else if 90 <= grade && grade < 100 {
+    } else if 90 <= grade && grade <= 100 {
         return [UIColor.init(hex: 0xef33b1), UIColor.init(hex: 0xf6e6bc)]
     } else {
         return [UIColor.init(hex: 0x9fa5d5), UIColor.init(hex: 0xe8f5c8)]
     }
+}
+
+extension UIColor {
+    static let myPurple = UIColor(red: 96.0/255.0, green: 114.0/255.0, blue: 1.0, alpha: 1.0)
 }

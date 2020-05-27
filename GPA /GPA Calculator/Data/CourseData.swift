@@ -82,3 +82,18 @@ func getData() {
     }
     print(courseData)
 }
+
+func getTermStr(type: Term) -> String {
+    switch type {
+    case .one:
+        return "大一"
+    case .two:
+        return "大二"
+    case .three:
+        return "大三"
+    case .four:
+        return "大四"
+    default:
+        return "全部"
+    }
+}

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94AAEE8E247E69EC0034ED83 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AAEE8D247E69EC0034ED83 /* SearchViewController.swift */; };
+		94AAEE90247E75930034ED83 /* LongBoxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AAEE8F247E75930034ED83 /* LongBoxCollectionViewCell.swift */; };
+		94AAEE92247E92250034ED83 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AAEE91247E92250034ED83 /* CourseTableViewCell.swift */; };
 		94F9EF592477C2B700D828C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9EF582477C2B700D828C9 /* AppDelegate.swift */; };
 		94F9EF622477C2BA00D828C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94F9EF612477C2BA00D828C9 /* Assets.xcassets */; };
 		94F9EF652477C2BA00D828C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F9EF632477C2BA00D828C9 /* LaunchScreen.storyboard */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94AAEE8D247E69EC0034ED83 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		94AAEE8F247E75930034ED83 /* LongBoxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBoxCollectionViewCell.swift; sourceTree = "<group>"; };
+		94AAEE91247E92250034ED83 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		94F9EF552477C2B700D828C9 /* GPA Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPA Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F9EF582477C2B700D828C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F9EF612477C2BA00D828C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 				94F9EF9B2477E38F00D828C9 /* Add */,
 				94F9EFAC24795A4400D828C9 /* Detail */,
 				94F9EF892477C36000D828C9 /* HomeViewController.swift */,
+				94AAEE8D247E69EC0034ED83 /* SearchViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -199,6 +206,8 @@
 			children = (
 				94F9EFA82477F4C100D828C9 /* BoxCollectionViewCell.swift */,
 				94F9EFB3247A947400D828C9 /* DetailTableViewCell.swift */,
+				94AAEE8F247E75930034ED83 /* LongBoxCollectionViewCell.swift */,
+				94AAEE91247E92250034ED83 /* CourseTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -357,6 +366,9 @@
 				94F9EF9A2477D99E00D828C9 /* ExampleBasicContentView.swift in Sources */,
 				94F9EF592477C2B700D828C9 /* AppDelegate.swift in Sources */,
 				94F9EFA32477EEBB00D828C9 /* Extension.swift in Sources */,
+				94AAEE92247E92250034ED83 /* CourseTableViewCell.swift in Sources */,
+				94AAEE8E247E69EC0034ED83 /* SearchViewController.swift in Sources */,
+				94AAEE90247E75930034ED83 /* LongBoxCollectionViewCell.swift in Sources */,
 				94F9EF8A2477C36000D828C9 /* HomeViewController.swift in Sources */,
 				94F9EFB0247A5ACC00D828C9 /* Helper.swift in Sources */,
 				94F9EFA92477F4C100D828C9 /* BoxCollectionViewCell.swift in Sources */,
@@ -527,7 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				DEVELOPMENT_TEAM = 3637HX3BF8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "GPA Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -535,7 +547,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = top.ranyw.GPACalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -547,7 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YAJ74PJU3F;
+				DEVELOPMENT_TEAM = 3637HX3BF8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "GPA Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -555,7 +567,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = top.ranyw.GPACalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = "top.ranyw.GPA-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

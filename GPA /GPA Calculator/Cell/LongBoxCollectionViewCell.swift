@@ -1,29 +1,24 @@
 //
-//  BoxCollectionViewCell.swift
+//  LongBoxCollectionViewCell.swift
 //  GPA Calculator
 //
-//  Created by Ryan on 2020/5/22.
+//  Created by Ryan on 2020/5/27.
 //  Copyright © 2020 Ryan. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-/// 盒子控件Cell
-class BoxCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: 视图
-    
+class LongBoxCollectionViewCell: UICollectionViewCell {
     lazy var leftImageView: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(named: "red")
+        let image = UIImage(named: "green")
         imageView.image = image
         return imageView
     }()
     
     lazy var rightTopLabel: UILabel = {
         let label = UILabel()
-        label.text = "4"
+        label.text = "0"
         label.textAlignment = .right
         label.textColor = UIColor(named: "cellLabelColor")
         label.font = UIFont.init(name: semiboldFontName, size: titleFontSize)
@@ -32,15 +27,13 @@ class BoxCollectionViewCell: UICollectionViewCell {
     
     lazy var leftBottomLabel: UILabel = {
         let label = UILabel()
-        label.text = "大一"
+        label.text = "所有"
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.textColor = .gray
+        label.textColor = UIColor(named: "cellLabelColor")
         label.font = UIFont.init(name: mediumFontName, size: assistFontSize)
         return label
     }()
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,30 +48,8 @@ class BoxCollectionViewCell: UICollectionViewCell {
     
     /// 更新UI界面
     /// - Parameters:
-    ///   - with: 0-3Cell中第几个
-    ///   - count: 0-3Cell对应的课程总数
-    public func updateUI(with: Int, count: Int) {
-        var imageName: String
-        var text: String
-        switch with {
-        case 0:
-            imageName = "blue"
-            text = "大一"
-        case 1:
-            imageName = "orange"
-            text = "大二"
-        case 2:
-            imageName = "gray"
-            text = "大三"
-        case 3:
-            imageName = "red"
-            text = "大四"
-        default:
-            imageName = "green"
-            text = "大一"
-        }
-        leftImageView.image = UIImage(named: imageName)
-        leftBottomLabel.text = text
+    ///   - count: 课程总数
+    public func updateUI(count: Int) {
         rightTopLabel.text = String(count)
         
     }

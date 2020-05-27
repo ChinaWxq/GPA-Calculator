@@ -28,7 +28,7 @@ class AddViewController: UIViewController {
         let label = UILabel()
         label.text = "添加课程"
         label.font = UIFont.init(name: semiboldFontName, size: navigationFontSize)
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         label.textAlignment = .left
         return label
     }()
@@ -37,7 +37,7 @@ class AddViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "学年"
-        label.textColor = .black
+        label.textColor =  UIColor(named: "cellLabelColor")
         label.textAlignment = .left
         return label
     }()
@@ -46,7 +46,7 @@ class AddViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "课程"
-        label.textColor = .black
+        label.textColor =  UIColor(named: "cellLabelColor")
         label.textAlignment = .left
         return label
     }()
@@ -55,7 +55,7 @@ class AddViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "学分"
-        label.textColor = .black
+        label.textColor =  UIColor(named: "cellLabelColor")
         label.textAlignment = .left
         return label
     }()
@@ -64,7 +64,7 @@ class AddViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "成绩"
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         label.textAlignment = .left
         return label
     }()
@@ -73,14 +73,14 @@ class AddViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: mediumFontName, size: titleFontSize)
         label.text = "备注"
-        label.textColor = .black
+        label.textColor =  UIColor(named: "cellLabelColor")
         label.textAlignment = .left
         return label
     }()
     
     lazy var backView: UIView = {
         let view = UIView(frame: CGRect(x: ScreenWidth * 0.1, y: ScreenHeight / 2 - ScreenWidth * 0.55, width: ScreenWidth * 0.8, height: ScreenWidth * 1.1))
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "background")
         view.layer.cornerRadius = 20.fit
         view.layer.masksToBounds = false
         view.layer.shadowColor = UIColor(red: 28/255, green: 28/255, blue: 28/255, alpha: 0.3).cgColor
@@ -109,6 +109,7 @@ class AddViewController: UIViewController {
         textField.delegate = self
         textField.textAlignment = .center
         textField.returnKeyType = .next
+        textField.textColor =  UIColor(named: "cellLabelColor")
         return textField
     }()
     
@@ -135,13 +136,14 @@ class AddViewController: UIViewController {
         control.insertSegment(withTitle: "大四", at: 3, animated: true)
         control.addTarget(self, action: #selector(segmentControlChanged), for: .valueChanged)
         control.selectedSegmentIndex = 0
-        //control.tintColor = UIColor.init(red: 252/255.0, green:245/255.0, blue:248/255.0, alpha:1)
+        control.backgroundColor = UIColor(named: "cellBackground")
+        control.tintColor = UIColor.myPurple
         return control
     }()
     
     lazy var courseGradeTextFieldView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "cellBackground")
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = false
         view.layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
@@ -153,7 +155,7 @@ class AddViewController: UIViewController {
     
     lazy var courseNameTextFieldView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "cellBackground")
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = false
         view.layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
@@ -165,7 +167,7 @@ class AddViewController: UIViewController {
     
     lazy var courseCreditPickerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "cellBackground")
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = false
         view.layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
@@ -439,7 +441,7 @@ extension AddViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let lable = UILabel(frame: CGRect(x: 0, y: 0, width: 180.fit, height: 40.fit))
-        lable.textColor = .black
+        lable.textColor =  UIColor(named: "cellLabelColor")
         lable.textAlignment = .center
         lable.font = UIFont.systemFont(ofSize: 20)
         lable.text = String(row + 1)

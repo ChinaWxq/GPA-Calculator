@@ -22,10 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         //window?.rootViewController = customTabBarViewController()
         window?.makeKeyAndVisible()
+        
+        UISearchBar.appearance().tintColor = .myPurple
+        UINavigationBar.appearance().tintColor = .myPurple
+        
         return true
     }
 
-
+    
+    
 }
 
 

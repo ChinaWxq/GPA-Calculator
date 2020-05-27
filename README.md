@@ -15,8 +15,8 @@ GPA计算器是一款本地化成绩管理的工具，无需网络以及其他�
 <img src = "images/delete.gif" width="375"/>
 </p>
 
+5.27最新进度：暗黑模式适配
 <p align = "center">
-<img src = "images/5.24-1.png" width="375"/>
-<img src = "images/5.24-2.png" width="375"/>
-<img src = "images/5.24-3.png" width="375"/>
+<img src = "images/5.27-1png" width="375"/>
+<img src = "images/5.27-2.png" width="375"/>
 </p>

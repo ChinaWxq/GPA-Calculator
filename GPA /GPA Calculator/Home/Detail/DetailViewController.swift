@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: semiboldFontName, size: titleFontSize)
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         return label
     }()
     
@@ -38,14 +38,14 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.init(name: semiboldFontName, size: titleFontSize)
         label.textAlignment = .right
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         return label
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = UIColor(named: "background")
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
     }
     
     func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "background")
         switch type {
         case .one:
             title = "大一学年"
@@ -103,7 +103,7 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.fit
+        return 80.fit
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

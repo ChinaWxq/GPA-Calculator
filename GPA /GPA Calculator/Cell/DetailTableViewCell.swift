@@ -38,16 +38,16 @@ class DetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "计算机网络"
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         label.font = UIFont.init(name: lightFontName, size: titleFontSize)
         return label
     }()
     
     lazy var leftBottomLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "3学分"
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         label.font = UIFont.init(name: lightFontName, size: assistFontSize)
         return label
     }()
@@ -56,7 +56,7 @@ class DetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "89"
-        label.textColor = .black
+        label.textColor = UIColor(named: "cellLabelColor")
         label.font = UIFont.init(name: mediumFontName, size: 18)
         return label
     }()
@@ -75,13 +75,13 @@ class DetailTableViewCell: UITableViewCell {
     
     lazy var backView: UIView = {
         let view = UIView()
+        view.backgroundColor = UIColor(named: "cellBackground")
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
-        setShadow()
     }
     
     required init?(coder: NSCoder) {
@@ -90,27 +90,29 @@ class DetailTableViewCell: UITableViewCell {
     
     
     func setupView() {
+        contentView.backgroundColor = UIColor(named: "background")
         selectionStyle = .none
         addSubview(backView)
-        backView.snp.makeConstraints{(make) in
-            make.left.top.equalToSuperview().offset(10.fit)
-            make.right.bottom.equalToSuperview().offset(-10.fit)
+        addSubview(leftTopLabel)
+        backView.layer.cornerRadius = 15.fit
+        backView.layer.masksToBounds = true
+        backView.snp.makeConstraints { (maker) in
+            maker.top.left.equalToSuperview().offset(5.fit)
+            maker.right.bottom.equalToSuperview().offset(-5.fit)
         }
         
-        addSubview(leftTopLabel)
-        
         leftTopLabel.snp.makeConstraints { (maker) in
-            maker.top.equalToSuperview().offset(20.fit)
-            maker.left.equalToSuperview().offset(25.fit)
-            maker.height.equalTo(40.fit)
+            maker.top.equalToSuperview().offset(15.fit)
+            maker.left.equalToSuperview().offset(15.fit)
+            maker.height.equalTo(30.fit)
             maker.width.equalTo(200.fit)
         }
         
         addSubview(leftBottomLabel)
         leftBottomLabel.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(5.fit)
+            maker.left.equalToSuperview().offset(15.fit)
             maker.bottom.equalToSuperview().offset(-10.fit)
-            maker.height.equalTo(40.fit)
+            maker.height.equalTo(30.fit)
             maker.width.equalTo(80.fit)
         }
                 
@@ -118,7 +120,7 @@ class DetailTableViewCell: UITableViewCell {
         rightPercentView.addSubview(rightLabel)
         addSubview(rightPercentView)
         rightPercentView.snp.makeConstraints { (maker) in
-            maker.right.equalToSuperview().offset(-20.fit)
+            maker.right.equalToSuperview().offset(-10.fit)
             maker.centerY.equalToSuperview()
             maker.width.equalTo(70.fit)
             maker.height.equalTo(70.fit)
@@ -130,16 +132,5 @@ class DetailTableViewCell: UITableViewCell {
             maker.width.equalTo(30.fit)
             maker.height.equalTo(30.fit)
         }
-    }
-    
-    /// 设置阴影
-    func setShadow(){
-        self.backView.backgroundColor = .white
-        self.backView.layer.cornerRadius = 20.fit
-        self.backView.layer.masksToBounds = false
-        self.backView.layer.shadowColor = UIColor(red: 0.43, green: 0.5, blue: 1, alpha: 0.3).cgColor
-        self.backView.layer.shadowOffset = CGSize(width: 0, height: 4.fit)
-        self.backView.layer.shadowOpacity = 1
-        self.backView.layer.shadowRadius = 12.fit
     }
 }
